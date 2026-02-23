@@ -1,0 +1,5 @@
+# Claude Code local files
+.claude/
+
+# OpenProse runtime state
+.prose/

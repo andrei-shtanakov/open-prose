@@ -1,0 +1,37 @@
+# OpenProse Roadmap
+
+## P0 — Infrastructure (quick wins)
+
+- [x] Root README.md
+- [x] Fix example numbering collisions (51 unique files)
+- [x] Synchronize documentation counters
+
+## P1 — Runtime Reliability
+
+- **Cost budgets** — `budget: $5.00` at program level. VM tracks spend via token counting and halts on overage. Add property to grammar (`compiler.md`) + enforcement logic in VM (`prose.md`)
+- **Concurrency limits** — `parallel (max_concurrent: N):` for rate limiting. Currently parallel launches all branches simultaneously without limits
+- **Pause/cancel protocol** — standardize substrate interaction for graceful stop. Format: marker in `state.md` + VM check before each session spawn
+
+## P2 — Developer Experience
+
+- **Deterministic replay** — save all discretion evaluations (`**...**`) and their outcomes in state. On replay, substitute saved decisions instead of re-evaluating
+- **Structured error reporting** — on runtime failure emit: statement, line context, agent state, retry count. Currently errors depend on substrate
+- **`prose inspect <run>`** — CLI command for viewing completed runs (wrapper over `lib/inspector.prose`)
+
+## P3 — Language Extensions
+
+- **Type annotations for bindings** — optional typing: `let research: ResearchReport = session "..."`. Compile-time validation via `compiler.md`
+- **`timeout:` property** — native timeout for sessions (`timeout: 60s`). Currently no way to limit subagent execution time
+- **`watch:` event blocks** — react to external events (filesystem, webhooks). New primitive for event-driven workflows
+
+## P4 — Ecosystem
+
+- **Registry governance** — p.prose.md: program versioning, SLA, namespacing, discovery. Currently no versions — `use "alice/research"` always fetches latest
+- **Stdlib expansion** — add: test runner (run .prose as tests), deploy helper, notification integrations
+- **Pluggable observability** — observer pattern: backends Noop/Log/File/Webhook. VM emits events, observer processes them
+
+## P5 — Research
+
+- **Syntax register benchmarking** — formal A/B testing of 6 syntax registers (functional, Borges, Folk, etc.) on learnability and memorability
+- **Multi-VM coordination** — protocol for multiple VMs working in parallel on a single task (distributed execution)
+- **Formal verification** — can .prose programs be proven correct? Identify a subset of the language amenable to formal verification
