@@ -1,0 +1,6 @@
+# ATP Adapters Pattern Analysis
+# Two-step sequential: explore structure, then analyze patterns
+
+session "Explore the directory structure of ../atp-platform/packages/atp-adapters/. List all adapter implementations, their file organization, and the base classes they extend."
+
+session "Based on the exploration above, write a summary of common patterns across all adapters. Include: shared interface, initialization conventions, error handling approach, and any inconsistencies between adapters."

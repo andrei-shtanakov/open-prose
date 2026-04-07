@@ -1,0 +1,4 @@
+# ATP Architecture Summary
+# Simple one-step: read the project and summarize
+
+session "Read the README.md and key configuration files in ../atp-platform. Produce a concise architecture summary covering: project purpose, tech stack, package structure (atp-core, atp-adapters, atp-dashboard, atp-sdk), and key design decisions."
