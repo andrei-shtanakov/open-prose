@@ -36,7 +36,7 @@
 
 ## Runtime semantics
 
-- [ ] Finish deterministic replay: a VM replay mode that substitutes recorded discretion outcomes instead of re-evaluating them @owner:github:andrei-shtanakov @id:deterministic-replay-vm-mode
+- [ ] Finish deterministic replay: a VM replay mode that substitutes recorded discretion outcomes instead of re-evaluating them @owner:github:andrei-shtanakov @id:deterministic-replay-vm-mode @epic:eco.libretto-runtime
       The recording half shipped in Phase 1: every discretion (`**...**`) emits a
       receipt carrying its condition, outcome and taken branch (`contracts/receipt.md`,
       `discretion` kind; `libretto.md` → Receipts). What does not exist is the
@@ -50,7 +50,7 @@
       answers a related question and should not be re-answered differently).
       Described in `ROADMAP.md` → P2, "Deterministic replay".
 
-- [ ] Add line context and agent state to structured errors @owner:github:andrei-shtanakov @id:error-line-context-agent-state
+- [ ] Add line context and agent state to structured errors @owner:github:andrei-shtanakov @id:error-line-context-agent-state @epic:eco.libretto-runtime
       The receipt `error` object shipped in Phase 1 with `type` / `message` /
       `retry_count` (`contracts/receipt.md`). Line context and agent-state capture do
       not exist, so a failure receipt today says what went wrong but not where in the
@@ -94,7 +94,7 @@
       `assert` states what must hold and a guard states what must not.
       Described in `ROADMAP.md` → P2.5.
 
-- [ ] Audit the nine block-body `output NAME = expr` sites against the grammar's root-scope-only rule, before any spec decision @owner:github:andrei-shtanakov @id:output-scope-audit
+- [ ] Audit the nine block-body `output NAME = expr` sites against the grammar's root-scope-only rule, before any spec decision @owner:github:andrei-shtanakov @id:output-scope-audit @epic:eco.libretto-runtime
       `compiler.md:3130-3131` and `libretto.md:490-491` both state
       `outputBinding → "output" IDENTIFIER "=" expression` is root-scope-only and
       `outputReturn → "output" expression` is for block bodies only. Nine sites in
